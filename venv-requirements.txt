@@ -1,2 +1,5 @@
 urllib3<2.0
 requests
+flask
+flask[async]
+aiohttp
