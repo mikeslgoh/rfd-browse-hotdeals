@@ -1,8 +1,11 @@
-import requests
+from pyodide.http import pyfetch
+import asyncio
 
-
-def get_page():
+async def get_page():
+	print('Getting page ...')
 	url = 'https://forums.redflagdeals.com/hot-deals-f9/'
-	page = requests.get(url)
 
-	print(page.text)
+	response = await asyncio.gather(pyfetch(url, method="GET"))
+
+	data_dict = await response.json()
+	print(data_dict)

@@ -2,8 +2,14 @@
 <html>
 <head>
 	<title>RFD Hot Deals</title>
+	<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+	<script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
-
+	<py-config type="toml">	
+		[[fetch]]
+		files = ["./rfd_requests.py"]
+	</py-config>
+	<py-script src="main.py"></py-script>
 </body>
 </html>
