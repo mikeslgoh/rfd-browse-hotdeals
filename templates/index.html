@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <title>RFD Hot Deals</title>
 <body>
-{{ output }}
+<div style="width: 50%; margin: auto">
+        {% for post in posts %}
+        <div style="padding: 10px; background-color: #EEE; margin: 20px">
+            <p style="font-size: 24px">{{ post }}{{ posts[post] }}</p>
+        </div>
+        {% endfor %}
+    </div>
 </body>
