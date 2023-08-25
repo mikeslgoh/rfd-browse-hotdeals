@@ -3,3 +3,4 @@ requests
 Flask
 frozen-flask
 beautifulsoup4
+pyinstaller
