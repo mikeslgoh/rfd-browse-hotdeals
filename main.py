@@ -1,10 +1,12 @@
 from flask import Flask, render_template
+from flask_frozen import Freezer
+
 import requests
 from bs4 import BeautifulSoup
-import json
 import re
 
 app = Flask(__name__)
+freezer = Freezer(app)
 
 
 @app.route("/", methods=['GET'])
@@ -34,6 +36,9 @@ def get_page():
             json_strs[dealer].append(post)
         resp = requests.get(f'{url}/hot-deals-f9/{n}')
         soup = BeautifulSoup(resp.content, 'html.parser')
-    print(json_strs)
-
     return render_template("index.html", posts=json_strs)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    # freezer.freeze() - generate static pages
