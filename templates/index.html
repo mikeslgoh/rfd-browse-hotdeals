@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <title>RFD Hot Deals</title>
 <body>
+    <!-- not sure how to retrieve input from HTML for python code
+            EXAMPLE - https://www.geeksforgeeks.org/retrieving-html-from-data-using-flask/
+        <div>
+        <input type="text" placeholder="" oninput='{{url_for("home")}}''>
+    </div> -->
 <div style="width: 50%; margin: auto">
         {% for post in posts %}
-        <div style="padding: 10px; background-color: #EEE; margin: 20px">
+        {% if posts[post] %}<div style="padding: 10px; background-color: #EEE; margin: 20px">
             <p style="font-size: 24px">{{ post }}{{ posts[post] }}</p>
-        </div>
+        </div>{% endif %}
         {% endfor %}
     </div>
 </body>
